@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BG Collections — Bolsas e acessórios femininos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+
+  /* ==========================================================
+     BG COLLECTIONS — mini site
+     -----------------------------------------------------------
+     COMO EDITAR (agora pelo painel):
+     Acesse SEUSITE.netlify.app/admin para trocar fotos, preços,
+     descrições e o número do WhatsApp — sem mexer em código.
+     Veja o arquivo SETUP.md para configurar o painel.
+     ========================================================== */
+
+  :root{
+    --bg-main:#FFF8F5;
+    --bg-soft:#F9ECE7;
+    --rose-gold:#B98778;
+    --rose-gold-light:#D9B7AC;
+    --ink:#3B211C;
+    --ink-soft:#6F5148;
+    --card:#FFFFFF;
+    --line:rgba(185,135,120,0.25);
+    --shadow: 0 10px 30px -12px rgba(59,33,28,0.12);
+    --radius-lg: 28px;
+    --radius-md: 18px;
+    --serif: "Fraunces", Georgia, serif;
+    --sans: "Jost", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg-main);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-weight:400;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+  button{font-family:inherit;cursor:pointer;}
+
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 32px;
+  }
+
+  h1,h2,h3{
+    font-family:var(--serif);
+    font-weight:500;
+    margin:0;
+    color:var(--ink);
+    letter-spacing:-0.01em;
+  }
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:rgba(255,248,245,0.86);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:22px 32px;
+    max-width:1180px;
+    margin:0 auto;
+  }
+  .logo{
+    font-family:var(--serif);
+    font-size:22px;
+    letter-spacing:0.02em;
+    color:var(--ink);
+    font-weight:600;
+  }
+  .logo em{
+    font-style:italic;
+    color:var(--rose-gold);
+  }
+  .nav-links{
+    display:flex;
+    align-items:center;
+    gap:36px;
+    font-size:14px;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+  .nav-links a{
+    position:relative;
+    padding-bottom:4px;
+    transition:color .25s ease;
+  }
+  .nav-links a::after{
+    content:"";
+    position:absolute;
+    left:0; bottom:0;
+    width:0%; height:1px;
+    background:var(--rose-gold);
+    transition:width .3s ease;
+  }
+  .nav-links a:hover{color:var(--ink);}
+  .nav-links a:hover::after{width:100%;}
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:14px 28px;
+    border-radius:999px;
+    font-size:14px;
+    letter-spacing:0.03em;
+    border:1px solid transparent;
+    transition:transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease;
+    white-space:nowrap;
+  }
+  .btn-primary{
+    background:var(--rose-gold);
+    color:#fff;
+    box-shadow:0 8px 20px -8px rgba(185,135,120,0.6);
+  }
+  .btn-primary:hover{
+    transform:translateY(-2px);
+    box-shadow:0 14px 26px -10px rgba(185,135,120,0.7);
+  }
+  .btn-ghost{
+    background:transparent;
+    color:var(--ink);
+    border-color:var(--line);
+  }
+  .btn-ghost:hover{
+    border-color:var(--rose-gold);
+    color:var(--rose-gold);
+  }
+  .btn-sm{padding:10px 18px;font-size:13px;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding:88px 0 96px;
+    overflow:hidden;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.05fr 0.95fr;
+    gap:64px;
+    align-items:center;
+  }
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    font-size:12.5px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--rose-gold);
+    background:var(--bg-soft);
+    padding:8px 16px 8px 12px;
+    border-radius:999px;
+    margin-bottom:26px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:6px;height:6px;
+    border-radius:50%;
+    background:var(--rose-gold);
+    display:inline-block;
+  }
+  .hero h1{
+    font-size:clamp(36px, 4.6vw, 58px);
+    line-height:1.08;
+    max-width:11.5ch;
+  }
+  .hero h1 .accent{
+    font-style:italic;
+    color:var(--rose-gold);
+  }
+  .hero p.lead{
+    margin-top:24px;
+    font-size:17px;
+    line-height:1.7;
+    color:var(--ink-soft);
+    max-width:44ch;
+  }
+  .hero-actions{
+    display:flex;
+    gap:16px;
+    margin-top:38px;
+    flex-wrap:wrap;
+  }
+
+  .hero-visual{
+    position:relative;
+    height:560px;
+  }
+  .frame{
+    position:absolute;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    border:1px solid var(--line);
+  }
+  /* Arco grande — a peça principal, como uma vitrine em pé */
+  .frame-arch{
+    width:58%;
+    height:100%;
+    left:6%;
+    top:0;
+    border-radius:280px 280px 26px 26px;
+    z-index:2;
+  }
+  /* Círculo suave no canto superior direito */
+  .frame-circle{
+    width:30%;
+    aspect-ratio:1/1;
+    right:0;
+    top:4%;
+    border-radius:50%;
+    z-index:1;
+  }
+  /* Quadrado menor, sobrepondo a base do arco — a "coleção" */
+  .frame-square{
+    width:36%;
+    height:34%;
+    right:2%;
+    bottom:0;
+    border-radius:24px;
+    z-index:3;
+  }
+  .placeholder-bag{
+    width:100%;
+    height:100%;
+    position:relative;
+    background:
+      radial-gradient(120% 140% at 25% 10%, #F6E4DC 0%, transparent 55%),
+      linear-gradient(160deg, #EAD0C6 0%, #C79B87 48%, #8E6353 100%);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .frame-circle .placeholder-bag{
+    background:
+      radial-gradient(120% 140% at 30% 20%, #FBEFEA 0%, transparent 60%),
+      linear-gradient(160deg, #F3DCD3 0%, #D9B7AC 100%);
+  }
+  .placeholder-bag::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(115deg, transparent 40%, rgba(255,255,255,0.35) 50%, transparent 60%);
+    transform:translateX(-100%);
+    animation:sheen 5s ease-in-out infinite;
+  }
+  @keyframes sheen{
+    0%,60%{transform:translateX(-120%);}
+    100%{transform:translateX(120%);}
+  }
+  .placeholder-bag svg{
+    width:30%;
+    height:30%;
+    opacity:0.85;
+  }
+  .placeholder-label{
+    position:absolute;
+    bottom:14px; left:14px;
+    font-size:10.5px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:rgba(255,255,255,0.9);
+    background:rgba(59,33,28,0.3);
+    padding:5px 10px;
+    border-radius:999px;
+  }
+
+  /* ---------- Section shared ---------- */
+  section{padding:96px 0;}
+  .section-head{
+    max-width:640px;
+    margin:0 auto 56px;
+    text-align:center;
+  }
+  .section-head h2{
+    font-size:clamp(28px, 3.4vw, 40px);
+    line-height:1.2;
+  }
+  .section-head p{
+    margin-top:18px;
+    color:var(--ink-soft);
+    font-size:16px;
+    line-height:1.7;
+  }
+
+  .collection{background:var(--bg-soft);}
+
+  /* ---------- Filtro de categoria ---------- */
+  .filter-bar{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:12px;
+    margin-bottom:44px;
+  }
+  .filter-btn{
+    padding:10px 22px;
+    border-radius:999px;
+    border:1px solid var(--line);
+    background:transparent;
+    color:var(--ink-soft);
+    font-size:13px;
+    letter-spacing:0.03em;
+    transition:background .25s ease, color .25s ease, border-color .25s ease;
+  }
+  .filter-btn:hover{
+    border-color:var(--rose-gold);
+    color:var(--rose-gold);
+  }
+  .filter-btn.active{
+    background:var(--rose-gold);
+    border-color:var(--rose-gold);
+    color:#fff;
+  }
+  .empty-state{
+    text-align:center;
+    color:var(--ink-soft);
+    font-size:14.5px;
+    padding:40px 0;
+  }
+
+  .grid-products{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:28px;
+  }
+
+  .card{
+    background:var(--card);
+    border-radius:var(--radius-md);
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    border:1px solid var(--line);
+    transition:transform .3s ease, box-shadow .3s ease;
+  }
+  .card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 20px 40px -16px rgba(59,33,28,0.18);
+  }
+  .card-img{
+    height:230px;
+    position:relative;
+  }
+  .card-img[data-clickable]{
+    cursor:pointer;
+  }
+  .card-img[data-clickable]::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(59,33,28,0);
+    transition:background .25s ease;
+  }
+  .card-img[data-clickable]:hover::after{
+    background:rgba(59,33,28,0.12);
+  }
+  .card-body{
+    padding:22px 22px 24px;
+  }
+  .card-cat{
+    font-size:11.5px;
+    letter-spacing:0.09em;
+    text-transform:uppercase;
+    color:var(--rose-gold);
+    margin-bottom:8px;
+    display:block;
+  }
+  .card-body h3{
+    font-size:20px;
+    margin-bottom:8px;
+  }
+  .card-desc{
+    font-size:14px;
+    line-height:1.6;
+    color:var(--ink-soft);
+    margin-bottom:16px;
+  }
+  .card-foot{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .price{
+    font-family:var(--serif);
+    font-size:19px;
+    color:var(--ink);
+  }
+
+  /* ---------- Features ---------- */
+  .grid-features{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:28px;
+    margin-top:8px;
+  }
+  .feature-card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius-md);
+    padding:34px 28px;
+    box-shadow:var(--shadow);
+  }
+  .feature-mark{
+    width:42px; height:42px;
+    border-radius:12px;
+    background:var(--bg-soft);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:22px;
+  }
+  .feature-mark svg{width:20px;height:20px;color:var(--rose-gold);stroke:var(--rose-gold);}
+  .feature-card h3{
+    font-size:19px;
+    margin-bottom:10px;
+  }
+  .feature-card p{
+    font-size:14.5px;
+    line-height:1.7;
+    color:var(--ink-soft);
+    margin:0;
+  }
+
+  /* ---------- CTA / Footer ---------- */
+  .cta{
+    background: linear-gradient(155deg, #3B211C 0%, #4a2c25 100%);
+    border-radius:var(--radius-lg);
+    margin:0 32px;
+    padding:72px 48px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .cta::before{
+    content:"";
+    position:absolute;
+    width:420px;height:420px;
+    border-radius:50%;
+    background:radial-gradient(circle, rgba(185,135,120,0.35), transparent 70%);
+    top:-160px; right:-120px;
+  }
+  .cta h2{
+    color:#FFF8F5;
+    font-size:clamp(26px,3.2vw,38px);
+    max-width:18ch;
+    margin:0 auto;
+    position:relative;
+  }
+  .cta p{
+    color:#E6D3CB;
+    max-width:48ch;
+    margin:20px auto 34px;
+    font-size:15.5px;
+    line-height:1.7;
+    position:relative;
+  }
+  .cta .btn{position:relative;}
+
+  footer{
+    padding:56px 0 40px;
+    text-align:center;
+  }
+  .footer-name{
+    font-family:var(--serif);
+    font-size:19px;
+    color:var(--ink);
+  }
+  .footer-sub{
+    margin-top:8px;
+    font-size:13px;
+    letter-spacing:0.05em;
+    color:var(--ink-soft);
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 900px){
+    .hero-grid{grid-template-columns:1fr; gap:48px;}
+    .hero{padding:56px 0 64px;}
+    .hero-visual{height:400px; order:-1;}
+    .frame-arch{width:56%; left:2%;}
+    .frame-circle{width:32%;}
+    .frame-square{width:38%;}
+    .hero h1{max-width:none;}
+    .grid-products{grid-template-columns:repeat(2,1fr);}
+    .grid-features{grid-template-columns:1fr;}
+    section{padding:64px 0;}
+    .cta{margin:0 20px;padding:52px 28px;}
+  }
+
+  @media (max-width: 600px){
+    .wrap{padding:0 20px;}
+    .nav{padding:16px 20px;}
+    .nav-links{gap:18px; font-size:12px;}
+    .nav-links .btn{padding:9px 16px;}
+    .logo{font-size:18px;}
+    .hero-actions{flex-direction:column; align-items:stretch;}
+    .grid-products{grid-template-columns:1fr;}
+    .card-img{height:210px;}
+    .section-head{margin-bottom:36px;}
+    .cta{margin:0 14px; padding:44px 22px;}
+    footer{padding:44px 0 32px;}
+  }
+
+  :focus-visible{
+    outline:2px solid var(--rose-gold);
+    outline-offset:3px;
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.001ms !important; transition-duration:0.001ms !important;}
+  }
+
+  /* ---------- Lightbox (galeria ampliada) ---------- */
+  .lightbox-overlay{
+    position:fixed;
+    inset:0;
+    z-index:100;
+    background:rgba(59,33,28,0.92);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:56px 24px;
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .3s ease;
+  }
+  .lightbox-overlay.open{
+    opacity:1;
+    pointer-events:auto;
+  }
+  .lightbox-content{
+    position:relative;
+    max-width:720px;
+    width:100%;
+  }
+  .lightbox-img-wrap{
+    border-radius:var(--radius-md);
+    overflow:hidden;
+    box-shadow:0 30px 70px -20px rgba(0,0,0,0.55);
+    background:#1c1210;
+    line-height:0;
+  }
+  .lightbox-img-wrap img{
+    width:100%;
+    max-height:74vh;
+    object-fit:contain;
+    display:block;
+    margin:0 auto;
+  }
+  .lightbox-close,
+  .lightbox-prev,
+  .lightbox-next{
+    position:absolute;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    background:rgba(255,248,245,0.14);
+    border:1px solid rgba(255,248,245,0.35);
+    color:#FFF8F5;
+    font-size:18px;
+    transition:background .25s ease;
+  }
+  .lightbox-close:hover,
+  .lightbox-prev:hover,
+  .lightbox-next:hover{
+    background:rgba(255,248,245,0.28);
+  }
+  .lightbox-close{
+    top:-58px;
+    right:0;
+  }
+  .lightbox-prev,
+  .lightbox-next{
+    top:50%;
+    transform:translateY(-50%);
+  }
+  .lightbox-prev{ left:-16px; }
+  .lightbox-next{ right:-16px; }
+  .lightbox-meta{
+    text-align:center;
+    color:#F3DCD3;
+    font-size:13px;
+    letter-spacing:0.04em;
+    margin-top:16px;
+  }
+  @media (max-width:600px){
+    .lightbox-overlay{padding:72px 16px 24px;}
+    .lightbox-prev{ left:0; }
+    .lightbox-next{ right:0; }
+    .lightbox-close{ top:-50px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo">BG <em>Collections</em></div>
+    <nav class="nav-links">
+      <a href="#colecao">Coleção</a>
+      <a href="#contato">Contato</a>
+      <a class="btn btn-primary btn-sm" id="whatsapp-nav" href="#" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- ===================== HERO ===================== -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Coleções selecionadas</span>
+        <h1>Bolsas e acessórios com <span class="accent">brilho discreto</span>.</h1>
+        <p class="lead">Um mini site boutique para apresentar a BG Collections com uma vitrine fácil de atualizar sempre que uma coleção acabar.</p>
+        <div class="hero-actions">
+          <a href="#colecao" class="btn btn-primary">Ver coleção</a>
+          <a href="#" id="whatsapp-hero" class="btn btn-ghost" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="frame frame-arch">
+          <div class="placeholder-bag">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l1 12H5L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+            <span class="placeholder-label">Foto principal aqui</span>
+          </div>
+        </div>
+        <div class="frame frame-circle">
+          <div class="placeholder-bag"></div>
+        </div>
+        <div class="frame frame-square">
+          <div class="placeholder-bag">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="7" width="16" height="12" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+            <span class="placeholder-label">Coleção</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== COLEÇÃO ===================== -->
+  <section class="collection" id="colecao">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Cada peça, sempre atualizada.</h2>
+        <p>A vitrine abaixo é editada direto pelo painel da loja — fotos, preços e descrições podem mudar a qualquer momento sem precisar mexer em código.</p>
+      </div>
+      <div class="filter-bar" id="filter-bar"><!-- gerado via JS --></div>
+      <div class="grid-products" id="product-grid"><!-- gerado via JS a partir de data/site.json --></div>
+    </div>
+  </section>
+
+  <!-- ===================== DIFERENCIAIS ===================== -->
+  <section class="features">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Uma loja pequena, com aparência de marca memorável.</h2>
+        <p>O layout foi pensado para coleções que mudam rápido: poucas seções, vitrine objetiva e detalhes rose gold para manter o visual sofisticado mesmo quando as fotos forem trocadas.</p>
+      </div>
+      <div class="grid-features">
+        <div class="feature-card">
+          <div class="feature-mark"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.9 6.4L21 9.3l-4.9 4.4L17.4 21 12 17.6 6.6 21l1.3-7.3L3 9.3l6.1-.9L12 2Z"/></svg></div>
+          <h3>Peças selecionadas</h3>
+          <p>A vitrine destaca poucos itens por vez para valorizar cada bolsa.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-mark"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M3 12h3M18 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/><circle cx="12" cy="12" r="4"/></svg></div>
+          <h3>Detalhe premium</h3>
+          <p>Rose gold aparece como assinatura, sem pesar o visual.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-mark"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-8.9 8.4 8.6 8.6 0 0 1-3.8-.9L3 20l1.1-5A8.5 8.5 0 1 1 21 11.5Z"/></svg></div>
+          <h3>Atendimento próximo</h3>
+          <p>A chamada para WhatsApp fica pronta para receber pedidos e dúvidas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CTA / CONTATO ===================== -->
+  <section id="contato" style="padding-top:0;">
+    <div class="cta">
+      <h2>Quando suas fotos entrarem, a BG Collections já terá cara de boutique.</h2>
+      <p>Substitua as imagens, ajuste preços e mantenha a vitrine sempre atualizada para o próximo lançamento — direto pelo painel, sem código.</p>
+      <a href="#" id="whatsapp-cta" class="btn btn-primary" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-name">BG Collections</div>
+  <div class="footer-sub">Bolsas e acessórios • coleções limitadas</div>
+</footer>
+
+<!-- ===================== LIGHTBOX ===================== -->
+<div class="lightbox-overlay" id="lightbox" aria-hidden="true">
+  <div class="lightbox-content" role="dialog" aria-modal="true">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Fechar">&times;</button>
+    <button class="lightbox-prev" id="lightbox-prev" aria-label="Foto anterior">&#8249;</button>
+    <div class="lightbox-img-wrap">
+      <img id="lightbox-img" src="" alt="">
+    </div>
+    <button class="lightbox-next" id="lightbox-next" aria-label="Próxima foto">&#8250;</button>
+    <div class="lightbox-meta" id="lightbox-meta"></div>
+  </div>
+</div>
+
+<!-- Netlify Identity: necessário para o link de convite por e-mail do painel
+     (/admin) completar o login corretamente antes de redirecionar. -->
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
+
+<script>
+  // Lista fixa de categorias — mantenha igual às opções em admin/config.yml
+  const CATEGORIAS = ["Bolsa", "Pulseira", "Brinco", "Cinto", "Lenço", "Relógio"];
+
+  const bagIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l1 12H5L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>`;
+
+  let PRODUTOS = [];
+  let filtroAtual = "Todos";
+
+  function ProductCard(p, index){
+    const fotos = Array.isArray(p.imagens) ? p.imagens.filter(Boolean) : [];
+    const temFoto = fotos.length > 0;
+    const imgContent = temFoto
+      ? `<img src="${fotos[0]}" alt="${p.nome}" style="width:100%;height:100%;object-fit:cover;">`
+      : `<div class="placeholder-bag">${bagIcon}<span class="placeholder-label">${p.nome}</span></div>`;
+    return `
+      <article class="card">
+        <div class="card-img" ${temFoto ? `data-clickable data-product-index="${index}"` : ""}>${imgContent}</div>
+        <div class="card-body">
+          <span class="card-cat">${p.categoria}</span>
+          <h3>${p.nome}</h3>
+          <p class="card-desc">${p.desc}</p>
+          <div class="card-foot">
+            <span class="price">${p.preco}</span>
+          </div>
+        </div>
+      </article>`;
+  }
+
+  function renderFilterBar(){
+    const bar = document.getElementById('filter-bar');
+    const opcoes = ["Todos", ...CATEGORIAS];
+    bar.innerHTML = opcoes.map(cat =>
+      `<button type="button" class="filter-btn${cat === filtroAtual ? " active" : ""}" data-filtro="${cat}">${cat}</button>`
+    ).join('');
+  }
+
+  function renderGrid(){
+    const grid = document.getElementById('product-grid');
+    const visiveis = PRODUTOS
+      .map((p, index) => ({ p, index }))
+      .filter(({ p }) => filtroAtual === "Todos" || p.categoria === filtroAtual);
+
+    grid.innerHTML = visiveis.length
+      ? visiveis.map(({ p, index }) => ProductCard(p, index)).join('')
+      : `<div class="empty-state">Nenhum produto em "${filtroAtual}" no momento.</div>`;
+  }
+
+  document.getElementById('filter-bar').addEventListener('click', e => {
+    const btn = e.target.closest('.filter-btn');
+    if (!btn) return;
+    filtroAtual = btn.dataset.filtro;
+    renderFilterBar();
+    renderGrid();
+  });
+
+  document.getElementById('product-grid').addEventListener('click', e => {
+    const imgEl = e.target.closest('.card-img[data-clickable]');
+    if (!imgEl) return;
+    openLightbox(Number(imgEl.dataset.productIndex), 0);
+  });
+
+  // ---------- Lightbox ----------
+  let lb = { produto: null, indiceFoto: 0 };
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxMeta = document.getElementById('lightbox-meta');
+  const lightboxPrev = document.getElementById('lightbox-prev');
+  const lightboxNext = document.getElementById('lightbox-next');
+
+  function openLightbox(productIndex, indiceFoto){
+    const produto = PRODUTOS[productIndex];
+    const fotos = (produto.imagens || []).filter(Boolean);
+    if (!fotos.length) return;
+    lb = { produto, fotos, indiceFoto };
+    atualizarLightbox();
+    lightbox.classList.add('open');
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function atualizarLightbox(){
+    const { produto, fotos, indiceFoto } = lb;
+    lightboxImg.src = fotos[indiceFoto];
+    lightboxImg.alt = produto.nome;
+    lightboxMeta.textContent = fotos.length > 1
+      ? `${produto.nome} — foto ${indiceFoto + 1} / ${fotos.length}`
+      : produto.nome;
+    const multiplasFotos = fotos.length > 1;
+    lightboxPrev.style.display = multiplasFotos ? 'flex' : 'none';
+    lightboxNext.style.display = multiplasFotos ? 'flex' : 'none';
+  }
+
+  function closeLightbox(){
+    lightbox.classList.remove('open');
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  function mudarFoto(delta){
+    if (!lb.fotos) return;
+    lb.indiceFoto = (lb.indiceFoto + delta + lb.fotos.length) % lb.fotos.length;
+    atualizarLightbox();
+  }
+
+  document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+  lightboxPrev.addEventListener('click', () => mudarFoto(-1));
+  lightboxNext.addEventListener('click', () => mudarFoto(1));
+  lightbox.addEventListener('click', e => {
+    if (e.target === lightbox) closeLightbox();
+  });
+  document.addEventListener('keydown', e => {
+    if (!lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') mudarFoto(-1);
+    if (e.key === 'ArrowRight') mudarFoto(1);
+  });
+
+  fetch('/data/site.json')
+    .then(res => res.json())
+    .then(({ whatsapp, produtos }) => {
+      document.querySelectorAll('#whatsapp-nav, #whatsapp-hero, #whatsapp-cta')
+        .forEach(el => el.href = whatsapp);
+      PRODUTOS = produtos;
+      renderFilterBar();
+      renderGrid();
+    })
+    .catch(err => console.error('Não foi possível carregar data/site.json', err));
+</script>
+
+</body>
+</html>

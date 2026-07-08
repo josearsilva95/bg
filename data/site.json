@@ -1,0 +1,11 @@
+{
+  "whatsapp": "https://wa.me/5500000000000",
+  "produtos": [
+    { "nome": "Bolsa Aurora", "categoria": "Bolsa", "preco": "R$ 189", "desc": "Peça selecionada para looks de noite e eventos.", "imagens": [] },
+    { "nome": "Mini Bag Jade", "categoria": "Bolsa", "preco": "R$ 159", "desc": "Compacta, sofisticada e fácil de combinar.", "imagens": [] },
+    { "nome": "Carteira Flora", "categoria": "Cinto", "preco": "R$ 79", "desc": "Acabamento delicado para o dia a dia.", "imagens": [] },
+    { "nome": "Bolsa Luna", "categoria": "Bolsa", "preco": "R$ 169", "desc": "Modelo versátil para rotina e encontros.", "imagens": [] },
+    { "nome": "Necessaire Rosé", "categoria": "Lenço", "preco": "R$ 69", "desc": "Ideal para presentear ou montar kit.", "imagens": [] },
+    { "nome": "Bolsa Serena", "categoria": "Bolsa", "preco": "R$ 199", "desc": "Estoque limitado por coleção.", "imagens": [] }
+  ]
+}
