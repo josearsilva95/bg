@@ -1,11 +1,47 @@
 {
   "whatsapp": "https://wa.me/5500000000000",
   "produtos": [
-    { "nome": "Bolsa Aurora", "categoria": "Bolsa estruturada", "preco": "R$ 189", "desc": "Peça selecionada para looks de noite e eventos.", "imagem": "" },
-    { "nome": "Mini Bag Jade", "categoria": "Mini bag", "preco": "R$ 159", "desc": "Compacta, sofisticada e fácil de combinar.", "imagem": "" },
-    { "nome": "Carteira Flora", "categoria": "Acessório", "preco": "R$ 79", "desc": "Acabamento delicado para o dia a dia.", "imagem": "" },
-    { "nome": "Bolsa Luna", "categoria": "Bolsa tiracolo", "preco": "R$ 169", "desc": "Modelo versátil para rotina e encontros.", "imagem": "" },
-    { "nome": "Necessaire Rosé", "categoria": "Acessório", "preco": "R$ 69", "desc": "Ideal para presentear ou montar kit.", "imagem": "" },
-    { "nome": "Bolsa Serena", "categoria": "Bolsa média", "preco": "R$ 199", "desc": "Estoque limitado por coleção.", "imagem": "" }
+    {
+      "nome": "Bolsa Aurora",
+      "categoria": "Bolsa estruturada",
+      "preco": "R$ 189",
+      "desc": "Peça selecionada para looks de noite e eventos.",
+      "imagem": ""
+    },
+    {
+      "nome": "Mini Bag Jade",
+      "categoria": "Mini bag",
+      "preco": "R$ 159",
+      "desc": "Compacta, sofisticada e fácil de combinar.",
+      "imagem": ""
+    },
+    {
+      "nome": "Carteira Flora",
+      "categoria": "Acessório",
+      "preco": "R$ 79",
+      "desc": "Acabamento delicado para o dia a dia.",
+      "imagem": ""
+    },
+    {
+      "nome": "Bolsa Luna",
+      "categoria": "Bolsa tiracolo",
+      "preco": "R$ 169",
+      "desc": "Modelo versátil para rotina e encontros.",
+      "imagem": ""
+    },
+    {
+      "nome": "Necessaire Rosé",
+      "categoria": "Acessório",
+      "preco": "R$ 69",
+      "desc": "Ideal para presentear ou montar kit.",
+      "imagem": ""
+    },
+    {
+      "nome": "Bolsa Serena",
+      "categoria": "Bolsa média",
+      "preco": "R$ 199",
+      "desc": "Estoque limitado por coleção.",
+      "imagem": ""
+    }
   ]
 }
