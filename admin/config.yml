@@ -1,0 +1,31 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+locale: "pt"
+
+collections:
+  - name: "loja"
+    label: "Loja"
+    files:
+      - name: "site"
+        label: "Vitrine e WhatsApp"
+        file: "data/site.json"
+        fields:
+          - label: "Link do WhatsApp"
+            name: "whatsapp"
+            widget: "string"
+            hint: "Formato: https://wa.me/55DDDNUMERO (só números depois de wa.me/)"
+          - label: "Produtos"
+            name: "produtos"
+            widget: "list"
+            summary: "{{nome}} — {{preco}}"
+            fields:
+              - { label: "Foto", name: "imagem", widget: "image", required: false, hint: "Deixe em branco para usar o marcador visual." }
+              - { label: "Nome", name: "nome", widget: "string" }
+              - { label: "Categoria", name: "categoria", widget: "string" }
+              - { label: "Preço", name: "preco", widget: "string", hint: "Ex: R$ 189" }
+              - { label: "Descrição", name: "desc", widget: "text" }
